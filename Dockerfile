@@ -17,7 +17,7 @@ COPY pyproject.toml README.md ./
 COPY agent ./agent
 COPY prompt_skill_library ./prompt_skill_library
 COPY docs ./docs
-COPY task_creation_demo_app.py video_task_module.py ./
+COPY task_creation_demo_app.py video_task_module.py commerce_style_templates.py ./
 
 RUN python -m pip install --upgrade pip \
     && python -m pip install -e .
