@@ -1,0 +1,11 @@
+.git
+.idea
+.venv
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.uploads/
+.env
+*.zip
+*.mp4
+*Zone.Identifier

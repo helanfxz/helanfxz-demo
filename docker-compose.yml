@@ -1,0 +1,16 @@
+services:
+  aigc-video-system:
+    build: .
+    ports:
+      - "8010:8010"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8010
+      AIGC_DISABLE_LLM: ${AIGC_DISABLE_LLM:-1}
+      AIGC_DISABLE_VIDEO_MODEL: ${AIGC_DISABLE_VIDEO_MODEL:-1}
+      AIGC_DISABLE_BACKGROUND_REMOVAL: ${AIGC_DISABLE_BACKGROUND_REMOVAL:-1}
+      ARK_API_KEY: ${ARK_API_KEY:-}
+      ARK_TEXT_ENDPOINT_ID: ${ARK_TEXT_ENDPOINT_ID:-}
+      ARK_VIDEO_ENDPOINT_ID: ${ARK_VIDEO_ENDPOINT_ID:-}
+    volumes:
+      - ./.uploads:/app/.uploads

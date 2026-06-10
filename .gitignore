@@ -1,0 +1,13 @@
+*.pdf
+.idea
+.env
+.venv/
+__pycache__/
+*.egg-info/
+.uploads/
+*.zip
+*Zone.Identifier
+.pytest_cache/
+.worktrees/
+test.py
+scripts/
