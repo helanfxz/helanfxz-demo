@@ -54,6 +54,25 @@ AIGC_DISABLE_LLM=0
 AIGC_DISABLE_VIDEO_MODEL=0
 ```
 
+如果只想替换剧本、分镜和需求理解使用的文本模型，也可以配置 OpenAI-compatible 文本接口：
+
+```bash
+TEXT_LLM_BASE_URL=https://your-text-model-endpoint/v1
+TEXT_LLM_MODEL=your-model-name
+TEXT_LLM_API_KEY=...
+AIGC_DISABLE_LLM=0
+```
+
+代码还兼容 DeepSeek 文本模型：
+
+```bash
+DEEPSEEK_API_KEY=...
+DEEPSEEK_MODEL=deepseek-chat
+AIGC_DISABLE_LLM=0
+```
+
+素材图片理解仍需要能处理图片输入的多模态能力，推荐配置 `ARK_API_KEY + ARK_TEXT_ENDPOINT_ID`。
+
 ## 手动启动
 
 ```bash
@@ -66,6 +85,9 @@ python task_creation_demo_app.py
 - `ARK_API_KEY`：火山方舟 API Key。
 - `ARK_TEXT_ENDPOINT_ID`：文本/多模态模型 endpoint。
 - `ARK_VIDEO_ENDPOINT_ID`：Seedance 视频模型 endpoint。
+- `DEEPSEEK_API_KEY` / `DEEPSEEK_BASE_URL` / `DEEPSEEK_MODEL`：可选 DeepSeek 文本模型配置，用于需求结构化、剧本和分镜生成。
+- `TEXT_LLM_BASE_URL` / `TEXT_LLM_MODEL` / `TEXT_LLM_API_KEY`：可选 OpenAI-compatible 文本模型配置。
+- `TEXT_LLM_TIMEOUT`：文本模型请求超时时间，默认 `60` 秒。
 - `AIGC_DISABLE_LLM=1`：禁用 LLM，使用规则兜底。
 - `AIGC_DISABLE_VIDEO_MODEL=1`：禁用真实视频模型，使用本地预览降级。
 - `AIGC_DISABLE_BACKGROUND_REMOVAL=1`：禁用 rembg 抠图。
